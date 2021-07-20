@@ -1,5 +1,8 @@
 package varstuff;
 
+import java.io.FileReader;
+import java.io.FileWriter;
+
 class X {
   // NOPE, var is method local vars only
 //  var x = 99;
@@ -42,4 +45,20 @@ public class UsingVar {
 //
 //    }
 //  }
+
+  void doStuff() throws Throwable {
+    for (var x = 0; x < 3; x++)
+      System.out.println(x);
+
+    try (var in = new FileReader("");
+         var out = new FileWriter("")) {
+    }
+
+    var var = "var";
+
+//    int goto = 99;
+//    int const = 99;
+  }
 }
+
+//class var {}
