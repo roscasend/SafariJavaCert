@@ -80,5 +80,33 @@ E) LocalDate ld = LocalDate.of(2021, 3, 29);
    LocalDate ld2 = LocalDate.of(2021, 3, 29);
    sout(ld.equals(ld2));
 
+Q) Which are true?
+String s1 = "Hello";
+String s2 = new StringBuilder("Hello").toString();
+String s3 = s2.intern();
+// in another jarfile:
+class X {
+  static String h = "Hello";
+}
+A) s1 == s2
+B) s2 == s3
+C) s1 == s3
+D) X.h == s1
 
-
+Q) Which are valid?
+A) int x = 99; while (x) {}
+B) int x = 99; switch (x) {}
+C) enum Day { MONDAY; }
+...
+Day x = Day.MONDAY;
+switch (x) {
+case MONDAY:
+}
+D) enum Day { MONDAY; }
+...
+Day x = Day.MONDAY;
+switch (x) {
+case Day.MONDAY;
+}
+E) long count = 99;
+switch (count) {}
