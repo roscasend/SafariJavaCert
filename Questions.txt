@@ -110,3 +110,70 @@ case Day.MONDAY;
 }
 E) long count = 99;
 switch (count) {}
+
+Q) Which represent program bugs?
+A) Error
+B) Exception
+C) Throwable
+D) RuntimeException
+E) null values
+
+Q) Given:
+class X {
+    void doStuf() {}
+}
+
+Which are valid:
+A) class Y extends X {
+    void doStuf() throws FileNotFoundException {}
+}
+B) class Y extends X {
+    void doStuf() throws RuntimeException {}
+}
+C) class Y extends X {
+    void doStuf(int x) throws IOException {}
+}
+D) X.doStuf() can be modified with throws IOException
+E) if X.doStuf() is modified with throws IOException
+then Y.doStuf() can be modified with throws FileNotFoundException
+
+Q) Given
+  void doStuff() throws IOException {};
+  void doStuff2() throws FileNotFoundException {};
+And:
+  void tryStuff() {
+    try {
+      doStuff();
+      doStuff2();
+    } enter code here {
+      // handle both exceptions
+    }
+  }
+What can be inserted at "enter code here"
+to provide handling of exceptions from both
+methods?
+A) catch (IOException | FileNotFoundException e)
+B) catch (FileNotFoundException | IOException e)
+C) catch (FileNotFoundException e)
+D) catch (IOException e)
+E) finally
+
+Q) Given
+     void doStuff() throws SQLException {};
+     void doStuff2() throws FileNotFoundException {};
+   And:
+     void tryStuff() throws XXX {
+       try {
+         doStuff();
+         doStuff2();
+       } catch (SQLException | FileNotFoundException e) {
+         throw e;
+       }
+     }
+
+   What is best inserted at XXX?
+   A) throws Exception
+   B) throws SQLException
+   C) throws FileNotFoundException
+   D) throws FileNotFoundException, SQLException
+   E) nothing is needed, compilation succeeds as is
