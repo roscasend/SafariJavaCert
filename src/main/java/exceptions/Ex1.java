@@ -10,7 +10,12 @@ public class Ex1 {
     try {
       doStuff();
       doStuff2();
-    } catch (SQLException | FileNotFoundException e) {
+      // MULTI-CATCH formal param is FINAL
+//    } catch (SQLException | FileNotFoundException e) {
+    } catch (Exception e) {
+//      Exception f = e;
+//      e = f;
+//      throw f;
       throw e;
     }
   }
