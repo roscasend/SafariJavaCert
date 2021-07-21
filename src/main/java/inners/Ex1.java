@@ -7,7 +7,7 @@ public class Ex1 {
   // can be private/protected/default/public
   // static or instance
   // if it's static, the "proper" name is "nested"
-  public /*static*/ class Inner {
+  public static class Inner {
     private static String x = "Inner.x";
     private static void showXes() {
       System.out.println("x is " + x);
