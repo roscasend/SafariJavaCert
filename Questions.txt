@@ -240,3 +240,43 @@ Q) Given:
      C) Comparator<String> f =
      D) Supplier<String, Integer> f =
      E) BinaryOperator<String> f =
+
+Q) Given:
+     Predicate<String> getOne(int x) {
+       return new Predicate<String>() {
+         @Override
+         public boolean test(String s) {
+           return s.length() >= ++x;
+         }
+       };
+     }
+and:
+      System.out.println(
+      List.of("Fred", "Jim", "Sheila")
+      .removeIf(getOne(3)));
+What is the result?
+A) Compilation fails
+B) [Fred, Sheila]
+C) [Sheila]
+D) [Fred, Jim, Shiela]
+E) Exception at runtime
+
+Q) Which are valid interfaces for a lambda?
+A) interface { void doStuff(); }
+B) @FunctionalInterface interface {
+     void doStuff();
+     abstract void doMoreStuff();
+   }
+C) interface {
+     void doStuff();
+     default void doMoreStuff(){}
+   }
+D) public interface {
+     static void doStuff(){}
+     default void doMoreStuff(){}
+   }
+E) public interface {
+     static void doStuff(){}
+     default void doMoreStuff(){}
+     public abstract void evenMoreStuff();
+   }
